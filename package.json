@@ -1,0 +1,64 @@
+{
+  "name": "HabboElectron",
+  "productName": "Habbo Client",
+  "settings": {
+    "hotelName": "Habbo",
+    "url": "http://26.9.205.50/",
+    "useFrame": true,
+    "backgroundColor": "#ccc",
+    "hideMenu": false
+  },
+  "version": "1.0.0",
+  "description": "Habbo Hotel Desktop Application",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package-mac": "electron-forge package --arch=x64 --platform=darwin",
+    "package-win": "electron-forge package --arch=x64 --platform=win32",
+    "make": "electron-forge make --arch=x64 --platform=darwin && electron-forge make --arch=x64 --platform=win32",
+    "publish": "electron-forge publish --arch=x64 --platform=darwin && electron-forge publish --arch=x64 --platform=win32",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": "Layne Balsters (Laynester)",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "src/icon.icns"
+      },
+      "make_targets": {
+        "win32": [
+          "squirrel"
+        ],
+        "darwin": [
+          "zip",
+          "dmg"
+        ],
+        "linux": [
+          "deb",
+          "rpm",
+          "flatpak",
+          "snap"
+        ]
+      }
+    }
+  },
+  "dependencies": {
+    "about-window": "^1.14.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^4.3.9"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.39",
+    "@electron-forge/maker-deb": "6.0.0-beta.39",
+    "@electron-forge/maker-rpm": "6.0.0-beta.39",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.39",
+    "@electron-forge/maker-zip": "6.0.0-beta.39",
+    "electron": "5.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AxwerKS/Habbi-Launcher-v2.git"
+  }
+}

@@ -1,0 +1,4 @@
+appId: com.habbi.launcherupdater
+publish:
+  provider: github
+  token: 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
